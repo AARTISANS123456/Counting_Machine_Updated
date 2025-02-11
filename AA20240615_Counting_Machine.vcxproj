@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{$guid1$}</ProjectGuid>
+    <Keyword>QtVS_v304</Keyword>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0</WindowsTargetPlatformVersion>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
+    <Import Project="$(QtMsBuild)\qt_defaults.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
+    <QtInstall>5.12.12_msvc2017_64</QtInstall>
+    <QtModules>core;gui;widgets;serialport;concurrent;</QtModules>
+    <QtBuildConfig>debug</QtBuildConfig>
+    <QtHeaderSearchPath>
+    </QtHeaderSearchPath>
+    <QtLibrarySearchPath>
+    </QtLibrarySearchPath>
+    <QtDeployIncludeModules>C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\;$(QtDeployIncludeModules)</QtDeployIncludeModules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
+    <QtInstall>5.12.12_msvc2017_64</QtInstall>
+    <QtModules>core;gui;widgets;serialport;concurrent;</QtModules>
+    <QtBuildConfig>release</QtBuildConfig>
+    <QtHeaderSearchPath>
+    </QtHeaderSearchPath>
+    <QtLibrarySearchPath>
+    </QtLibrarySearchPath>
+    <QtDeployIncludeModules>C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\;$(QtDeployIncludeModules)</QtDeployIncludeModules>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\opencv\build\include;C:\serial-main\include;C:\opencv\build\include;C:\opencv\build\include\opencv2;C:\Program Files %28x86%29\MVS\Development\Includes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <ScanSourceForModuleDependencies>true</ScanSourceForModuleDependencies>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <TranslateIncludes>true</TranslateIncludes>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>SetupAPI.Lib;serial.lib;opencv_world4100.lib;MvCameraControl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\opencv\build\include;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.20348.0\um\x64;C:\serial-main\build\Debug;C:\Program Files %28x86%29\MVS\Development\Libraries\win64;C:\opencv\build\x64\vc16\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
+    <QtRcc>
+      <AdditionalIncludeDirectories>C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtSerialPort;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </QtRcc>
+    <QtMoc>
+      <AdditionalIncludeDirectories>C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtSerialPort;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </QtMoc>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\opencv\build\include;C:\serial-main\include;C:\Program Files (x86)\MVS\Development\Includes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ScanSourceForModuleDependencies>true</ScanSourceForModuleDependencies>
+      <TranslateIncludes>true</TranslateIncludes>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>C:\opencv\build\include;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.20348.0\um\x64;C:\serial-main\build\Debug;C:\opencv\build\x64\vc16\lib;C:\Program Files (x86)\MVS\Development\Libraries\win64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SetupAPI.Lib;serial.lib;opencv_world4100d.lib;MvCameraControl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
+    </ProjectReference>
+    <QtRcc>
+      <AdditionalIncludeDirectories>C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtSerialPort;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </QtRcc>
+    <QtMoc>
+      <AdditionalIncludeDirectories>C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\include\QtSerialPort;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </QtMoc>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="ImageProcessing.cpp" />
+    <ClCompile Include="MainWindow.cpp" />
+    <ClCompile Include="messagehandler.cpp" />
+    <QtMoc Include="Worker.h" />
+    <QtRcc Include="AA20240615_Counting_Machine.qrc" />
+    <QtUic Include="MainWindow.ui">
+      <DeploymentContent>true</DeploymentContent>
+    </QtUic>
+    <ClInclude Include="AA20240615_Counting_Machine.h" />
+    <ClCompile Include="main.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\opencv\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ImageProcessing.h" />
+    <QtMoc Include="MainWindow.h" />
+    <ClInclude Include="messagehandler.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

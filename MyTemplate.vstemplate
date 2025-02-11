@@ -1,0 +1,32 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Chnages_In_Counting_m</Name>
+    <Description>&lt;No description available&gt;</Description>
+    <ProjectType>VC</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>Chnages_In_Counting_m</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="AA20240615_Counting_Machine.vcxproj" File="AA20240615_Counting_Machine.vcxproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="false" TargetFileName="$projectname$.vcxproj.filters">AA20240615_Counting_Machine.vcxproj.filters</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="ImageProcessing.cpp">ImageProcessing.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="MainWindow.cpp">MainWindow.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="messagehandler.cpp">messagehandler.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="main.cpp">main.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="AA20240615_Counting_Machine.h">AA20240615_Counting_Machine.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="ImageProcessing.h">ImageProcessing.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="messagehandler.h">messagehandler.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Worker.h">Worker.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="MainWindow.h">MainWindow.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="AA20240615_Counting_Machine.qrc">AA20240615_Counting_Machine.qrc</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="MainWindow.ui">MainWindow.ui</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>
